@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>my profile</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: #f008ce;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #hearder {
+            width: 100%;
+            height: 100vh;
+            background-image: url(img/nature4.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        img {
+            border-radius: 50%;
+            filter: drop-shadow(1px 1px 20px blue);
+        }
+
+        .contenier {
+            padding: 10px 10%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 220px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            color: #dee607;
+            text-decoration: none;
+            font-size: 25px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #0626f6;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+
+        }
+
+        .hearder-text {
+            font-size: 50px;
+            margin-top: 20%;
+
+
+        }
+
+        .hearder-text h1 {
+            font-size: 60px;
+            margin-top: 20px;
+            top: 5%;
+            left: 30%;
+
+
+        }
+
+        .hearder-text h1 span {
+            color: #1409e9;
+        }
+
+        /*---------start about section-------*/
+        #about {
+            padding: 80px 0;
+            color: #e409c0;
+            background: url(img/flower.jpg);
+            background-position: center;
+            background-size: cover;
+
+
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1 {
+            flex-basis: 35%;
+        }
+
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 100px;
+        }
+
+        .about-col-2 {
+            flex-basis: 60%;
+        }
+
+        .sub-title {
+            font-size: 60px;
+            font-weight: 600;
+
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #05b0e8;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .tab-contents ul li span {
+            color: #01080c;
+            font-size: 14px;
+        }
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+        /*----------------End About section -------------*/
+
+
+        /*----------------start service section -------------*/
+        #services {
+            padding: 30px 0;
+            background: #074751;
+            background: url(img/comp1.jpg);
+
+        }
+
+        #services .contenier {
+            text-align: center;
+        }
+
+        #services .contenier p {
+            margin-top: 15px;
+        }
+
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .services-list div {
+            background: #231f1f;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s, transform 0.5s;
+
+        }
+
+        .services-list div img {
+            margin-bottom: 30px;
+        }
+
+        .services-list div h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .services-list div a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .services-list div a:hover {
+            background: #1092de;
+
+        }
+
+        .services-list div:hover {
+            background: #e6e3a4;
+            transform: translateY(-10px);
+        }
+
+
+
+
+        /*----------------end service section -------------*/
+
+
+        /*----------------start portfolio section -------------*/
+        #portfolio {
+            padding: 9px 0;
+            background: url(img/comp2.jpg);
+        }
+
+        #portfolio .contenier {
+            text-align: center;
+            padding: 80px 0;
+            color: #e409c0;
+
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        #portfolio .contenier p {
+            margin-top: 15px;
+        }
+
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+
+        }
+
+        .work {
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(#1092de, crimson);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 14px;
+            transition: height 0.5s;
+        }
+
+        .layer h3 {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .layer a {
+            margin-top: 20px;
+            color: #00070c;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .work:hover img {
+            transform: scale(1.1);
+        }
+
+        .work:hover .layer {
+            height: 100%;
+        }
+
+        .btn {
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid #1092de;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.5s;
+        }
+
+        .btn:hover {
+            background: #1092de;
+            transform: scale(1.1);
+        }
+
+        /*---------------- start Contact section -------------*/
+
+
+        #contact {
+
+            padding-top: 50;
+            background: url(img/ashhar-pic.jpg);
+
+
+        }
+
+        .contact-left {
+            flex-basis: 35%;
+        }
+
+        .contact-right {
+            flex-basis: 60%;
+        }
+
+        .contact-left p {
+            margin-top: 30px;
+
+        }
+
+        .contact-left p i {
+            color: #1092de;
+            margin-right: 15px;
+            font-size: 25px;
+
+        }
+
+        .social-icons {
+            margin-top: 30px;
+
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: white;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .social-icons a:hover {
+            color: #1092de;
+            transform: translateY(-5px);
+        }
+
+        .btn.btn2 {
+            background: #1092de;
+            display: inline-block;
+        }
+
+        .btn.btn2:hover {
+            background: #100d0d;
+        }
+
+        .contact-right form {
+            width: 100%;
+
+
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            color: black;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        form .btn2 {
+            padding: 14px 60px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: #000000;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+
+        .copyright i {
+            color: #de102d;
+        }
+
+
+        /*---------------- End Contact section -------------*/
+
+        nav .fa-solid {
+            display: none;
+        }
+
+        @media Only Screen and (max-width:600px) {
+            .hearder-text {
+                margin-top: 50%;
+                font-size: 16px;
+            }
+
+            .hearder-text h1 {
+                font-size: 30px;
+            }
+
+            nav .fa-solid {
+                display: block;
+                font-size: 25px;
+            }
+
+            nav ul {
+                background: #1092de;
+                position: fixed;
+                top: 0;
+                right: -200px;
+                width: 200px;
+                height: 100vh;
+                padding-top: 50px;
+                z-index: 2;
+                transition: right 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 25px;
+
+            }
+
+            nav ul .fa-solid {
+                position: absolute;
+                top: 25px;
+                left: 25px;
+                cursor: pointer;
+            }
+
+            .sub-title {
+                font-size: 40px;
+
+            }
+
+            .about-col-1,
+            .about-col-2 {
+                flex-basis: 100%;
+            }
+
+            .about-col-1 {
+                margin-bottom: 30px;
+            }
+
+            .about-col-2 {
+                font-size: 14px;
+            }
+
+            .tab-links {
+                font-size: 16px;
+                margin-right: 20px;
+
+            }
+
+            .contact-left,
+            .contact-right {
+                flex-basis: 100%;
+            }
+
+            .copyright {
+                font-size: 14px;
+            }
+
+
+
+
+
+
+        }
+    </style>
+</head>
+
+<body onload="loader()">
+    <div id="Loading"></div>
+    <!-----start Hearder section----->
+    <div id="hearder" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="contenier">
+            <nav>
+                <a href="rating.html"> <img src="img/aj.png" alt="logo" class="logo" data-aos="zoom-in"> </a>
+                <ul id="sidmenu" data-aos="zoom-in">
+
+                    <marquee direction="">
+                        <h1>Ashhar Jamali</h1>
+                    </marquee>
+
+                    <li><a href="#hearder">ℍ𝕆𝕄𝔼</a></li>
+                    <li><a href="#about">𝔸𝔹𝕆𝕌𝕋</a></li>
+                    <li><a href="#services">𝕊𝔼ℝ𝕍𝕀ℂ𝔼𝕊</a></li>
+                    <li><a href="#portfolio">ℙℝ𝕆𝕁𝕖ℂ𝕋𝕊</a></li>
+                    <li><a href="#contact">ℂ𝕆ℕ𝕋𝔸ℂ𝕋</a></li>
+
+
+
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+
+
+            <h1>
+                <div style="text-align: center;" class="hearder-text" data-aos="fade-right" data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                    <h1>❣ developer ❣</h1>
+                    <img src="img/dp.jpg" height="150px" width="150px" data-aos="zoom-in">
+
+                    <h1>🙋‍♂️Hi... I Am <span style="color: rgb(82, 10, 238);">Ashhar Jamali</span> From Bihar
+                    </h1>
+            </h1>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+    <!-----End Hearder section----->
+
+
+    <!-----start About section----->
+
+
+
+    <div id="about" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <div class="contenier">
+            <div style="text-align: center;" class="banner-box">
+
+                <h2> <a style="background-color: #0a0114;" spellcheck="true" href="index.html">↗️↗️↗️
+                    </a>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/dp.jpg" data-aos="zoom-in">
+                </div>
+                <div class="about-col-2" data-aos="zoom-in">
+                    <h1 style="color: rgb(254, 101, 7);" class="sub-title">𝐀ᑲⱺυ𝗍 ꭑ𝖾</h1>
+                    <h3>
+                        <p style="color: rgb(229, 10, 221);">A second-year student in computer science and engineering.
+                            A
+                            future developer, that's me.
+                            Interning at the Sparks Foundation, I did web development. A few projects I worked on also
+                            helped me hone my coding abilities. I'm now honing my skills in preparation for my ambition
+                            to
+                            become a proficient programmer.I am currently employed with Coding Ninjas as a Ninja
+                            Entrepreneur and by E-CELL IIT Madras as a Campus Ambassador.</p>
+                    </h3>
+
+                    <h2>
+                        <div style="color: rgb(6, 3, 0);" class="tab-titles" data-aos="fade-left">
+                            <h2>
+                                <p class="tab-links active-link " onclick="opentab('skills')">Skills</p>
+                            </h2>
+                            <h2>
+                                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            </h2>
+                            <h2>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                            </h2>
+                        </div>
+                    </h2>
+                    <div class="tab-contents active-tab" id="skills" data-aos="zoom-in">
+                        <ul>
+                            <h3>
+                                <li><span>html ,css, javascript, excel, powerBi, sqL</span><br>Competitive programming
+                                </li>
+                            </h3>
+                            <h3>
+                                <li><span>Frontend Development</span><br> Web development</li>
+                            </h3>
+                            <h3>
+                                <li><span>Data Analytics</span><br>Promoting various organizations through social
+                                    media
+                                </li>
+                            </h3>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <h3>
+                                <li><span>2022 - October </span><br>Web Development Intern at The Sparks Foundation
+                                </li>
+                            </h3>
+                            <h3>
+                                <li><span>2022 - Present</span><br>Mood Indigo Squad Member at IIT Bombay</li>
+                            </h3>
+                            <h3>
+                                <li><span>2022 - Present</span><br>Campus Ambassador at IIT Madras</li>
+                            </h3>
+                            <h3>
+                                <li><span>2022 - Present</span><br>Ninja Entrepreneur at Coding Ninjas</li>
+                            </h3>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <h3>
+                                <li><span>Matriculation</span><br>Kainat international School
+                                </li>
+                            </h3>
+                            <h3>
+                                <li><span>Intermediate</span><br>DR Jameer Ahsaan High school Dhodha
+                                </li>
+                            </h3>
+
+                            <h3>
+                                <li><span>Computer science and Engineering</span><br>Mewat Engineering College
+                                </li>
+                            </h3>
+
+                            <h3>
+                                <li><span>Web development</span><br>STP Computer Education
+                                </li>
+                            </h3>
+
+                            <h3>
+                                <li><span>Data Analytics</span><br>Code Basics
+                                </li>
+                            </h3>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----End About section----->
+
+
+
+
+    <!-----Service section Start----->
+    <div id="services" data-aos="fade-up" data-aos-anchor-placement="top-center">
+        <div class="contenier">
+            <div class="banner-box">
+
+                <h2> <a style="background-color: #0a0114;" spellcheck="true" href="index.html">↗️↗️↗️
+                    </a>
+                </h2>
+            </div>
+            <h1 style="color: chartreuse;" class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div data-aos="fade-right">
+                    <img src="img/flag.png">
+                    <h2 style="color: chartreuse;">Front End Development</h2>
+                    <p style="color: rgb(230, 13, 241);">Creating websites from ideas.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div data-aos="flip-up">
+                    <img src="img/pancel.png">
+                    <h2 style="color: chartreuse;">Website Design</h2>
+                    <p style="color: rgb(217, 5, 224);">Make people smile by developing Apps.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="img/grars.png">
+                    <h2 style="color: chartreuse;">Data Analytics</h2>
+                    <p style="color: rgb(222, 11, 225);">Be where the world is going.</p>
+                    <a href="#">Learn More</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!----services section end ----->
+
+
+    <!----portfolio section Start ----->
+
+    <div id="portfolio">
+        <div class="contenier">
+            <div class="banner-box">
+
+                <h2> <a style="background-color: #0a0114;" spellcheck="true" href="index.html">↗️↗️↗️
+                    </a>
+                </h2>
+            </div>
+            <h1 style="color: rgb(249, 122, 12);" class="sub-title">My Projects</h1>
+            <h2>
+                <p style="color: rgb(208, 5, 59);">Creative endeavours will reveal one's talent and commitment..</p>
+            </h2>
+            <div class="work-list">
+                <div class="work" data-aos="zoom-in">
+                    <img src="img/Portfolio2.png">
+                    <div style="color: rgb(6, 11, 1);" class="layer">
+                        <h3>Basic College Website</h3>
+                        <p>This website has been developed in training period</p>
+                        <a target="_blank"
+                            href="https://www.linkedin.com/in/ashhar-jamali-5322642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+
+                </div>
+                <div class="work" data-aos="zoom-in">
+                    <img src="img/Portfolio3.png">
+                    <div style="color: rgb(6, 11, 1);" class="layer">
+                        <h3>Creating A Digital Resume</h3>
+                        <p>This resume has been developed for an internship</p>
+                        <a target="_blank"
+                            href="https://www.linkedin.com/in/ashhar-jamali-5322642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+
+                </div>
+                <div class="work" data-aos="zoom-in">
+                    <img src="img/Portfolio4.png">
+                    <div style="color: rgb(6, 11, 1);" class="layer">
+                        <h3>Chatting Application</h3>
+                        <p>A clone of whatsapp which is created using java!</p>
+                        <a target="_blank"
+                            href="https://www.linkedin.com/in/ashhar-jamali-5322642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app""><i
+                                class=" fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <a href="https://www.linkedin.com/in/ashhar-jamali-5322642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="btn">Learn More</a>
+
+        </div>
+    </div>
+    <!----portfolio section End ----->
+
+
+    <!----Contact section Start ----->
+    <div id="contact">
+        <div class="contenier">
+            <div style="text-align: center;" class="banner-box">
+
+                <h2> <a style="background-color: #0a0114;" spellcheck="true" href="index.html">↗️↗️↗️
+                    </a>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="contact-left" data-aos="fade-up-right">
+                    <h1 style="color: rgb(11, 241, 11);" class="sub-title"> Ashhar Contact </h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>asharjamali26@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone-flip"></i>+91 8789750226</p>
+                    <div class="social-icons" data-aos="zoom-in">
+
+                        <a target="_blank" class="facebook"
+                            href="https://www.facebook.com/ashhar.jamali.792?mibextid=ZbWKwL"><i
+                                class="fa-brands fa-facebook"></i></a>
+
+                        <a target="_blank" class="instagram"
+                            href="https://www.instagram.com/invites/contact/?igsh=3l9dly7bcl2d&utm_content=g5lf8ys"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a target="_blank" class="youtube"
+                            href="https://youtube.com/@ashar_jamali_?si=C68OFd4nuVRQbiaq"><i
+                                class="fa-brands fa-youtube"></i></a>
+
+                        <a target="_blank" class="linkedin"
+                            href="https://www.linkedin.com/in/ashhar-jamali-5322642a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fa-brands fa-linkedin"></i></a>
+
+                        <a target="_blank" class="whatsaap" href="https://wa.me/918789750226"><i
+                                class="fa-brands fa-square-whatsapp"></i></a>
+
+                        <a target="_blank" class="Twitter"
+                            href="https://x.com/AshharJama?t=Qqfwji0Sa2hC-TRa1lVBng&s=08"><i
+                                class="fa-brands fa-twitter"></i></i></a>
+
+
+
+
+                    </div>
+                    <a href="Ashhar_resume.pdf" class="btn btn2">View Resume</a>
+
+                </div>
+                <div class="contact-right" data-aos="fade-up-left">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="Email" name="Email" placeholder="Your Email" required>
+                        <textarea name="massage" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright All Rights
+            Reserved
+            Template By <a href="https://www.facebook.com/ashhar.jamali.792?mibextid=ZbWKwL">Ashhar jamali🤓</a>
+            <br> <a href="rating.html">Give Rating Here</a>
+        </div>
+    </div>
+
+    <!----Contact section End ----->
+    <script>
+        var preloader = document.getElementById("Loading");
+        function loader() {
+            preloader.style.display = 'none';
+        }
+    </script>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+        });
+    </script>
+    <script>
+        var sidmenu = document.getElementById("sidmenu");
+        function openmenu() {
+            sidmenu.style.right = "0";
+        }
+        function closemenu() {
+            sidmenu.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>
